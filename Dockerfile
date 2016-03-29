@@ -1,6 +1,6 @@
 FROM ubuntu:trusty
 
-ENV DEBIAN_FRONTEND=noninteractive LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LANGUAGE=en_US.UTF-8
+ENV DEBIAN_FRONTEND=noninteractive LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LANGUAGE=en_US.UTF-8 GOPATH=$PWD
 
 RUN apt-get update && locale-gen "en_US.UTF-8"
 RUN apt-get -y install unzip tar software-properties-common wget curl ruby ruby-dev build-essential git && \
