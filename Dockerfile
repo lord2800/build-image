@@ -3,7 +3,7 @@ FROM ubuntu:trusty
 ENV DEBIAN_FRONTEND=noninteractive LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LANGUAGE=en_US.UTF-8
 
 RUN apt-get update && locale-gen "en_US.UTF-8"
-RUN apt-get -y install unzip tar software-properties-common wget curl ruby ruby-dev build-essential && \
+RUN apt-get -y install unzip tar software-properties-common wget curl ruby ruby-dev build-essential git && \
     add-apt-repository -y ppa:ubuntu-lxc/lxd-stable && \
     add-apt-repository -y ppa:hansjorg/rust && \
     wget https://apt.puppetlabs.com/puppetlabs-release-pc1-trusty.deb && \
