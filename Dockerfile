@@ -12,5 +12,5 @@ RUN apt-get -y install unzip tar software-properties-common wget curl ruby ruby-
     apt-get update && \
     apt-get -y install puppet-agent golang rust-stable
 RUN apt-get clean
-RUN gem install --no-ri --no-rdoc librarian-puppet fpm-cookery
+RUN gem install --no-ri --no-rdoc librarian-puppet fpm-cookery puppet-lint
 
