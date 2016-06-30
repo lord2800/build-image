@@ -10,6 +10,8 @@ RUN apt-get -y install unzip tar software-properties-common wget curl ruby ruby-
     dpkg -i puppetlabs-release-pc1-trusty.deb && \
     rm puppetlabs-release-pc1-trusty.deb && \
     apt-get update && \
-    apt-get -y install puppet-agent golang rust-stable
+    apt-get -y install puppet-agent golang rust-stable && \
+    curl -sL https://deb.nodesource.com/setup_4.x | bash - && \
+    apt-get install -y nodejs
 RUN apt-get clean
 RUN gem install --no-ri --no-rdoc librarian-puppet fpm-cookery puppet-lint bundler
