@@ -17,7 +17,7 @@ RUN add-apt-repository -y ppa:ubuntu-lxc/lxd-stable && \
 ADD Gemfile .
 
 # Install tooling
-RUN apt-get -y install puppet-agent golang nodejs maven && \
+RUN apt-get -y install puppet-agent golang nodejs default-jdk maven && \
     curl -sSf https://sh.rustup.rs | sh -s -- -y && \
     apt-get clean && \
     gem install --no-rdoc --no-ri bundler && \
