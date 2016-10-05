@@ -1,6 +1,6 @@
 FROM ubuntu:xenial
 
-ENV DEBIAN_FRONTEND=noninteractive LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LANGUAGE=en_US.UTF-8 GOPATH=$PWD
+ENV DEBIAN_FRONTEND=noninteractive LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LANGUAGE=en_US.UTF-8 GOPATH=$PWD PATH=$PATH:/opt/puppetlabs/bin
 
 # Get things up to date
 RUN apt-get update && apt-get -y dist-upgrade && locale-gen "en_US.UTF-8"
@@ -23,6 +23,7 @@ RUN apt-get -y install puppet-agent golang nodejs default-jdk maven && \
     gem install --no-rdoc --no-ri bundler && \
     bundle install --binstubs=/usr/local/bin
 
+RUN puppet --version
 RUN librarian-puppet version
 RUN puppet-lint --version
 RUN fpm-cook --version
