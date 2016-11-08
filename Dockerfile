@@ -23,7 +23,7 @@ RUN apt-get -y install puppet-agent golang nodejs default-jdk maven && \
     gem install --no-rdoc --no-ri bundler && \
     bundle install --binstubs=/usr/local/bin
 
-RUN puppet --version
-RUN librarian-puppet version
-RUN puppet-lint --version
-RUN fpm-cook --version
+RUN puppet --version && \
+	librarian-puppet version && \
+	puppet-lint --version && \
+	fpm-cook --version
